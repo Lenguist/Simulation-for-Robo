@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<robot name="test_robot">
+  <link name="base">
+    <visual>
+      <geometry>
+        <mesh filename="base_without_legs.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_blue_base">
+        <color rgba="0.2 0.1 0.8 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1.15689"/>
+      <origin xyz="-0.074206 -0.0795 0.175784" rpy="0 0 0"/>
+      <inertia 
+        ixx="0.01124" 
+        ixy="0.000000001421" 
+        ixz="0.000000003106" 
+        iyy="0.0132" 
+        iyz="-0.000000002842" 
+        izz="0.001957"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="base_without_legs.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg">
+    <visual>
+      <origin xyz="0.019966 -0.116723 0.086266" rpy="0 -1.5708 0"/> 
+      <geometry>
+        <mesh filename="RIGHT leg assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red_leg">
+        <color rgba="0.8 0.1 0.2 1"/>
+      </material>
+    </visual>
+    <inertial>
+        <mass value="0.897933"/>
+        <origin xyz="0.019966 -0.116723 0.086266" rpy="0 0 0"/>
+        <inertia 
+            ixx="0.005374" 
+            ixy="0.0002085" 
+            ixz="0.000000104088" 
+            iyy="0.0009366" 
+            iyz="-0.0002651" 
+            izz="0.004528"/>
+    </inertial>
+    <collision>
+      <origin xyz="0.019966 -0.116723 0.086266" rpy="0 -1.5708 0"/> 
+      <geometry> 
+        <mesh filename="RIGHT leg assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_hip" type="revolute">
+    <parent link="base"/>
+    <child link="leg"/>
+    <origin xyz="0.009728 -0.034753 0.07782" rpy="0 0 0"/>
+    <axis xyz="1.0 -0.000777 0.0005"/>
+    <limit effort="10" velocity="100.0" lower="-1.57" upper="1.57"/>
+  </joint>
+</robot>
