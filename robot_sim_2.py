@@ -36,7 +36,7 @@ for i in range(10000):
 
     # Move all joints
     for jointIndex in range(numJoints):
-        targetPosition = 0.8 + 0.6 * math.sin(i * 0.01 + jointIndex)  # Offset the phase for each joint
+        targetPosition = 0.8 + 1.6 * math.sin(i * 0.01 + jointIndex)  # Offset the phase for each joint
         p.setJointMotorControl2(robotId, jointIndex, controlMode=mode, targetPosition=targetPosition)
 
     # Step the simulation

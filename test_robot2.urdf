@@ -10,7 +10,7 @@
       </material>
     </visual>
     <inertial>
-      <mass value="1.15689"/>
+      <mass value="111111.15689"/>
       <origin xyz="-0.074206 -0.0795 0.175784" rpy="0 0 0"/>
       <inertia 
         ixx="0.01124" 
@@ -29,7 +29,7 @@
 
   <link name="front_right_leg">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0.01221 0.04413 0.09471" rpy="0 0 0"/>
       <geometry>
         <mesh filename="front_right_leg.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -102,9 +102,9 @@
   <joint name="joint1" type="revolute">
     <parent link="base"/>
     <child link="front_right_leg"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="-0.01221 -0.04413 -0.09471" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="1.0" lower="-1.57" upper="1.57"/>
+    <limit effort="10" velocity="10.0" lower="-3.14" upper="3.14"/>
   </joint>
 
   <joint name="joint2" type="revolute">

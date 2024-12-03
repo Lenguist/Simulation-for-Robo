@@ -25,7 +25,7 @@ for i in range (10000):
     robotPos, _ = p.getBasePositionAndOrientation(robotId)
     p.resetDebugVisualizerCamera(cameraDistance, cameraYaw, cameraPitch, robotPos)  # Follow the robot
 
-    p.setJointMotorControl2(robotId, jointIndex, controlMode=mode, targetPosition=0.8+0.6*math.sin(i*0.01))
+    p.setJointMotorControl2(robotId, jointIndex, controlMode=mode, targetPosition=0.8+3.14*math.sin(i*0.01))
     p.stepSimulation()
     time.sleep(1./2400.)
 robotPos, robotOrn = p.getBasePositionAndOrientation(robotId)
